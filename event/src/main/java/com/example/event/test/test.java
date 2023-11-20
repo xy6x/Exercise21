@@ -48,10 +48,15 @@ public class test {
         return ev;
     }
     @GetMapping("/change/{index}")
-    public Event Change(@PathVariable int index) {
-   ev.get(index).setCapacity(ev.get(index).getCapacity()-1);
+    public ArrayList<Event> Change(@PathVariable int index) {
+        ArrayList<Event> e =new ArrayList<>();
+        for (Event en:ev
+             ) {
+            ev.get(index).setCapacity(ev.get(index).getCapacity()-1);
+             e.add(en);
 
-return null;
+        }
+return e;
 }
 
     @GetMapping("/search/{evn}")
